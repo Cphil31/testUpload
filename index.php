@@ -1,3 +1,11 @@
+<?php 
+var_dump($_FILES);
+    if(!empty($_FILES)){
+        $file_name = $_FILES ['fichier']['name'];
+        var_dump($file_name);
+        
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
