@@ -8,7 +8,7 @@
 <body>
     <h1>Uploader un fichier pdf </h1>
     <form action="index.php" method="POST" enctype="multipart/form-data">
-        <input type="file" name="fichier">
+        <input type="file" name="fichier"> <br>
         <input type="submit" value="envoyer le fichier">
     </form>
 </body>
