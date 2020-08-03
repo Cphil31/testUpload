@@ -8,6 +8,9 @@ var_dump($_FILES);
         // afficher l'extention du fichier 
         $file_extention = strchr($file_name,".");
         var_dump($file_extention);
+
+        // on crée un tableau pour l'authaurisation de l'extention 
+        
     }
 ?>
 <!DOCTYPE html>
