@@ -27,24 +27,19 @@ if(!empty($_FILES)){
     
     // on vérifie si l'extention fait partie du tableau authorisé 
     if(in_array($file_extention,$extention_valid)){
-        var_dump("Temp name = ".$file_tmp_name);
-        var_dump($file_extention);
         // il faut vérifier si le fichier existe.
         //si le nom existe déja , proposer de le remplacer.
 
         $file_name = $_FILES ['fichier']['name'];
 
-        if (isset($file_name)){
-            var_dump("existe");
-        }
-        
+
             // on vas vérifier le fichier de destination du fichier qu'on envoie . 
             // on vas l'envoyer dans le dossier files .
             if(move_uploaded_file($file_tmp_name,$file_dest)){
                 //requete pour envoyer a la base de données 
-                $q = "INSERT INTO files (Null,name,file_url) VALUES(?,?,?)";
+                $q = "INSERT INTO files (name,file_url) VALUES(?,?)";
                 $req = $db->prepare($q);
-                $req->execute(array(Null,$file_name,$file_dest));
+                $req->execute(array($file_name,$file_dest));
                 echo 'fichier envoyé avec succes';
             }
             else{

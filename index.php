@@ -38,7 +38,6 @@ require_once 'include/header.php';
         $nbr=0;
          foreach($q as $d) { 
              $nbr +=1;
-             var_dump($d[0]);
              ?>
                         <tr>
                             <th scope="row"><?=$nbr?></th>
