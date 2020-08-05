@@ -18,7 +18,6 @@ require_once 'include/header.php';
     $req = $db->prepare($q);
     $req->execute();
     $q= $req->fetchAll();
-    
     ?>
     <div class="container">
         <div class="row">
@@ -42,8 +41,8 @@ require_once 'include/header.php';
                         <tr>
                             <th scope="row"><?=$nbr?></th>
                             <td><?=$d[1]?></td>
-                            <td><img src="img/ico_edit.svg" onclick="modifier(event,<?=$d[0]?>)"></td>
-                            <td><img src="img/ico_cancel.svg" onclick="supprimer(event,<?=$d[0]?>)" ></td>
+                            <td><img src="img/ico_edit.svg" class="edit" onclick="modifier(event,<?=$d[0]?>)"></td>
+                            <td><img src="img/ico_cancel.svg" class="del" onclick="supprimer(event,<?=$d[0]?>)" ></td>
                         </tr>
                         <?php } ?>
                     </tbody>
